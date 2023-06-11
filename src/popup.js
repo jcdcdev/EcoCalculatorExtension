@@ -82,7 +82,7 @@ function updateBanner() {
     siteBanner.style.display = "block"
 }
 async function getApiData() {
-    var response = await fetch("http://good-game.top:3001/elixr-mods/framework/api/v1/get-prices/false")
+    var response = await fetch("https://eco.good-game.top/elixr-mods/framework/api/v1/get-prices/false")
     return await response.json();
 }
 
