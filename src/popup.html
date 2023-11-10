@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+
+<head>
+  <title>Good Game Eco Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="popup.js" defer></script>
+</head>
+
+<body class="pb-1" style="min-width: 480px; background-color: transparent;">
+  <div class="mx-1">
+    <div id="wrong-site">
+      <div class="alert alert-danger mb-0" role="alert">
+        Looking for the calculator? Go to <a id="site-link" href="https://eco-calc.com/">eco-calc</a>
+      </div>
+    </div>
+  </div>
+  <div class="mx-1" id="site">
+    <div class="h-100 m-1 d-flex align-items-center justify-content-between">
+      <div>
+        <h2 class="m-0">Good Game Eco Calculator</h2>
+        <span class="font-monospace mb-1 fst-italic" id="updated"></span>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary" id="button">Sync</button>
+      </div>
+    </div>
+    <div class="card" id="missing-prices">
+      <div class="card-header alert alert-danger mb-0" id="headingOne" data-bs-toggle="collapse"
+        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="cursor:pointer;">
+        <h3 class="mb-0">
+          ⚠️ Missing Prices - Open this! <i class="bi bi-chevron-down"></i>
+        </h3>
+      </div>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#missing-prices">
+        <div class="card-body">
+          <div class="alert alert-warning mb-1" role="alert">
+            Failing to follow these steps will lead to your prices being too low!
+          </div>
+          <img src="images/missing-price.png" style="height:32px;" class="img-fluid mb-1" alt="Missing Price">
+          <p>⚠️ No one is selling this item or it is out of stock</p>
+          <ul>
+            <li>Ask someone to start selling this item</li>
+            <li>Temporarily use your best guess</li>
+          </ul>
+          <h4>Tag icon next to item?</h4>
+          <img src="images/missing-price-tag.png" style="height:32px;" class="img-fluid mb-1"
+            alt="Missing Price for tagged item">
+          <p>⚠️ This price cannot be automatically calculated</p>
+          <ul>
+            <li>Set it to the cheapest price for items in that tag</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="loader" class="overlay align-items-center justify-content-center position-fixed top-0 start-0 w-100 h-100"
+    style="display:none; background-color:#000000c9;">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</body>
+
+</html>
